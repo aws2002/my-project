@@ -1,0 +1,157 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.switch[data-isOn="true"] {
+  justify-content: flex-end;
+}
+body {
+  overflow-x: hidden;
+}
+.link-footer li {
+  display: inline-block;
+  margin-left: 25px;
+}
+footer li a {
+  transition: all 0.2s ease;
+}
+footer li a:hover {
+  color: rgb(5 85 161);
+}
+.box {
+  &::after {
+    content: "";
+    width: 80px;
+    height: 80px;
+    top: 10px;
+    left: 340px;
+    background-color: rgba(255, 255, 255, 0.459);
+    position: absolute;
+    border-radius: 50%;
+  }
+  &::before {
+    content: "";
+    width: 150px;
+    height: 150px;
+    top: 15px;
+    left: 40px;
+    background-color: rgba(255, 255, 255, 0.281);
+    position: absolute;
+    border-radius: 50%;
+  }
+}
+.c::before {
+  content: "";
+  width: 40px;
+  height: 40px;
+  top: 115px;
+  left: 595px;
+  background-color: rgba(255, 255, 255, 0.432);
+  position: absolute;
+  border-radius: 50%;
+}
+.active {
+  background-color: #066ac9;
+  border-radius: 6px;
+  & button {
+    color: #fff;
+  }
+}
+.iconStar svg {
+  display: inline;
+}
+// .slick-dots li{
+//   display: block !important;
+// }
+.active--Box-Trending--Courses{
+  & .activeHover{
+    display: none;
+  }
+  &:hover .activeHover {
+    display: block;
+  }
+  &:hover .activeHover-text {
+    display: none;
+  }
+}
+.feedback--students::before{
+  content: "";
+  position: absolute;
+  top: 20px;
+  left: 5px;
+  width: 200px;
+  height: 200px;
+  background: #efced4;
+  border-radius: 50%;
+}
+
+.bg_img_1{
+  background-image: url(/asset\ 41.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.bg_img_2{
+  position: absolute;
+  bottom: 170px;
+  right: 820px;
+}
+.fill-danger {
+  fill: #d6293e !important;
+}
+.fill-warning{
+  fill: #f7c32e !important;
+}
+.contantImge{
+  border-radius:63% 37% 59% 41% / 38% 50% 50% 62%;
+  width: 100%;
+  height: 580px;
+}
+.marker{
+  position: absolute;
+  top: 15px;
+  left: 10px;
+}
+.bg_img_3{
+  position: absolute;
+  top: 213px;
+  left: -104px;
+  transform:rotate(70deg);
+  z-index: -1;
+}
+.fill-danger-2{
+  fill: #fbe9eb !important;
+}
+.vidoeo-play-btn {
+  animation: pulse_1 2s ease infinite;
+  &:hover {
+    animation: none;
+  }
+}
+@keyframes pulse_1 {
+  0% {
+    transform: scale(0.94);
+    box-shadow: 0 0 0 0 #066bc954;
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 12px #066bc985;
+  }
+  100% {
+    transform: scale(0.94);
+    box-shadow: 0 0 0 0 #066ac9;
+  }
+}
+.bg-img-contact{
+  background-image: url(/map-image.png);
+  background-size: cover;
+}
+.bg-img-3{
+  background-image: url(/asset\ 15.png);
+  background-size: cover;
+}
+.p-img-3{
+  right: 10px;
+  bottom: -20px;
+}
+.fill-warning-2{
+  fill: #f7c32e94;
+}
