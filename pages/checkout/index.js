@@ -56,6 +56,36 @@ export default function Checkout() {
       typeStyle: true,
     },
   ];
+  var inputs2 = [
+    {
+      id: 1,
+      type: "text",
+      nameLabel: "Card Number",
+      namePlaceholder: "xxxx xxxx xxxx xxxx",
+      styleCol: "col-span-2",
+    },
+    {
+      id: 2,
+      type: "text",
+      nameLabel: "Expiration date",
+      namePlaceholder: "Month / Year",
+      styleCol: "col-span-1",
+    },
+    {
+      id: 3,
+      type: "text",
+      nameLabel: "CVV / CVC",
+      namePlaceholder: "xxx",
+      styleCol: "col-span-1",
+    },
+    {
+      id: 4,
+      type: "text",
+      nameLabel: "Name on Card",
+      namePlaceholder: "Enter card holder name",
+      styleCol: "col-span-2",
+    },
+  ];
   return (
     <section className="checkout my-10 px-5">
       <div className=" container grid grid-cols-12 md:gap-x-14">
@@ -84,7 +114,7 @@ export default function Checkout() {
             </li>
           </ul>
         </div>
-        <div className=" md:col-span-8 col-span-full">
+        <div className=" md:col-span-8 col-span-full mb-10">
           <div className=" grid grid-cols-12">
             {toggleClose && (
               <div className=" col-span-full mb-8">
@@ -120,7 +150,7 @@ export default function Checkout() {
                 </div>
               </div>
             )}
-            <div className=" col-span-full  shadow-2xl rounded-lg p-5">
+            <div className=" col-span-full  shadow-md rounded-lg p-5">
               <div className=" grid grid-cols-2 gap-x-6">
                 <div className=" col-span-2 mb-8">
                   <h2 className=" font-bold text-black text-opacity-80 text-2xl">
@@ -184,23 +214,76 @@ export default function Checkout() {
                   </a>
                 </div>
                 <div className=" col-span-2">
-                  {[{ id: 1 }, { id: 2 }].map((item) => (
-                    <Disclosure as="div" className="mt-5">
+                  {[
+                    {
+                      id: 1,
+                      titel:"Credit or Debit Card",
+                      component: (
+                        <div className=" grid grid-cols-2 gap-4">
+                          {inputs2.map((item) => (
+                            <div className={item.styleCol} key={item.id}>
+                              <label className=" font-semibold text-color_1">
+                                {item.nameLabel}{" "}
+                                <span className=" text-color_10">*</span>
+                              </label>
+                              <input
+                                type={item.type}
+                                className=" block bg-color_6 w-full mt-2 h-10 px-3 rounded-sm"
+                                placeholder={item.namePlaceholder}
+                              />
+                            </div>
+                          ))}
+                        </div>
+                      ),
+                    },
+                    {
+                      id: 2,
+                      titel:"Pay with Net Banking",
+                      component: (
+                        <>
+                          <div className=" grid grid-cols-2 gap-4">
+                            <div className=" col-span-2">
+                              <p>
+                                In order to complete your transaction, we will
+                                transfer you over to Eduport secure servers.
+                                Select your bank from the drop-down list and
+                                click proceed to continue with your payment.
+                              </p>
+                            </div>
+
+                            <div className=" col-span-1">
+                              <select
+                                name="asdasd"
+                                id=""
+                                className="font-semibold text-opacity-60 text-color_1 block bg-color_6 w-full mt-2 h-10 px-2 rounded-sm"
+                              >
+                                <option
+                                  value=""
+                                  className=" font-semibold text-color_1 "
+                                >
+                                  Select country
+                                </option>
+                                ))
+                              </select>
+                            </div>
+                          </div>
+                        </>
+                      ),
+                    },
+                  ].map((item) => (
+                    <Disclosure as="div" className="mt-5" key={item.id}>
                       {({ open }) => (
                         <div>
-                          <Disclosure.Button className="flex justify-between w-full px-4 py-2 text-sm font-medium text-left text-purple-900 bg-color_23 rounded-lg hover:bg-purple-200 focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75">
-                            <span>Credit or Debit Card</span>
+                          <Disclosure.Button className="flex justify-between w-full px-4 py-2 text-sm font-medium text-left text-purple-900 bg-color_6 rounded-lg hover:bg-purple-200 focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75">
+                            <span className=" mt-1">{item.titel}</span>
                             <ChevronUpIcon
                               className={`${
                                 open ? "transform rotate-180" : ""
-                              } w-5 h-5 text-purple-500`}
+                              } w-7 h-7 text-purple-500`}
                             />
                           </Disclosure.Button>
                           <Disclosure.Panel className="px-4 pt-4 pb-2 text-sm text-gray-500">
-                            In order to complete your transaction, we will
-                            transfer you over to Eduport secure servers. Select
-                            your bank from the drop-down list and click proceed
-                            to continue with your payment.
+                            {item.component}
                           </Disclosure.Panel>
                         </div>
                       )}
@@ -213,7 +296,7 @@ export default function Checkout() {
         </div>
         <div className=" md:col-span-4 col-span-full">
           <div className=" grid grid-cols-12">
-            <div className="col-span-12 shadow-2xl rounded-lg p-5">
+            <div className="col-span-12 shadow-md rounded-lg p-5">
               <h3 className="font-bold text-2xl text-black text-opacity-80 mb-3">
                 Order Summary
               </h3>
@@ -262,7 +345,7 @@ export default function Checkout() {
                 </a>
               </p>
             </div>
-            <div className="col-span-12 shadow-2xl rounded-lg mt-5 p-10 bg-color_16 text-white bg-img-3 relative">
+            <div className="col-span-12 shadow-md rounded-lg mt-5 p-10 bg-color_16 text-white bg-img-3 relative">
               <h4 className=" font-bold text-xl mb-2">
                 Access 25K Online courses from 120 institutions, Start today!
               </h4>
