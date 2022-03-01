@@ -88,14 +88,14 @@ export default function Navbar() {
                     leaveFrom="transform opacity-100 scale-100"
                     leaveTo="transform opacity-0 scale-95"
                   >
-                    <Menu.Items className="origin-top-right z-50 absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
+                    <Menu.Items className="origin-top-right z-50 absolute right-0 mt-2 w-48 rounded-md shadow-lg overflow-hidden bg-white ring-black focus:outline-none">
                       <Menu.Item>
                         {({ active }) => (
                           <a
                             href="#"
-                            className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
+                            className={classNames(active ? ' bg-color_24' : '', 'text-color_1 block px-4 py-2 text-sm font-medium')}
                           >
-                            Your Profile
+                            Edit Profile
                           </a>
                         )}
                       </Menu.Item>
@@ -103,9 +103,9 @@ export default function Navbar() {
                         {({ active }) => (
                           <a
                             href="#"
-                            className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
+                            className={classNames(active ? 'bg-color_16' : '', 'text-color_1 block px-4 py-2 text-sm font-medium')}
                           >
-                            Settings
+                            Account Settings
                           </a>
                         )}
                       </Menu.Item>
@@ -113,7 +113,17 @@ export default function Navbar() {
                         {({ active }) => (
                           <a
                             href="#"
-                            className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
+                            className={classNames(active ? 'bg-color_16' : '', 'text-color_1 block px-4 py-2 text-sm font-medium')}
+                          >
+                            Help
+                          </a>
+                        )}
+                      </Menu.Item>
+                      <Menu.Item>
+                        {({ active }) => (
+                          <a
+                            href="#"
+                            className={classNames(active ? ' bg-color_10' : '', 'text-color_1 block px-4 py-2 text-sm font-medium')}
                           >
                             Sign out
                           </a>
