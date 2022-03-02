@@ -38,6 +38,10 @@ module.exports = {
       color_22:"#f5f7f9",
       color_23:"#fbe9eb",
       color_24:"#e6f0f9",
+      color_25:"#3c7ff1",
+      color_26:"#5d82d1",
+
+     
       
       inherit: colors.inherit,
       current: colors.current,
