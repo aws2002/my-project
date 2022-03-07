@@ -1,3 +1,8 @@
+import { HiOutlineMail } from "react-icons/hi";
+import { RiLockPasswordFill } from "react-icons/ri";
+import { FaFacebookF } from "react-icons/fa";
+import { BsGoogle } from "react-icons/bs";
+import Link from "next/link";
 import Head from "next/head";
 export default function SignUp() {
   return (
@@ -8,7 +13,7 @@ export default function SignUp() {
       </Head>
       <section className="sign-up">
         <div className=" grid grid-cols-2">
-          <div className="md:col-span-1 col-span-2 bg-color_24 md:h-screen h-full text-center py-10">
+          <div className="md:col-span-1 col-span-2 bg-color_24 h-full text-center py-10">
             <h2 className=" font-bold text-4xl text-opacity-80 mb-3 text-black">
               Welcome to our largest community
             </h2>
@@ -61,6 +66,108 @@ export default function SignUp() {
             <p className=" text-color_1 font-medium text-lg">
               Nice to see you! Please Sign up with your account.
             </p>
+            {[
+              {
+                id: 1,
+                titel: "Email address *",
+                type: "email",
+                placeholder: "E-mail",
+                icon: (
+                  <HiOutlineMail className=" absolute top-3 left-3 text-2xl text-color_1" />
+                ),
+              },
+              {
+                id: 2,
+                titel: "Password *",
+                type: "password",
+                placeholder: "**********",
+                icon: (
+                  <RiLockPasswordFill className=" absolute top-3 left-3 text-2xl text-color_1" />
+                ),
+              },
+              {
+                id: 3,
+                titel: "Confirm Password *",
+                type: "password",
+                placeholder: "**********",
+                icon: (
+                  <RiLockPasswordFill className=" absolute top-3 left-3 text-2xl text-color_1" />
+                ),
+              },
+            ].map((item) => (
+              <div key={item.id}>
+                <label
+                  htmlFor="email-address"
+                  className="block font-medium text-color_1 mt-5 mb-1 text-md"
+                >
+                  {item.titel}
+                </label>
+
+                <div className="relative">
+                  {item.icon}
+                  <input
+                    type={item.type}
+                    placeholder={item.placeholder}
+                    className=" font-medium w-full bg-color_22 pl-11 py-3 focus:ring-2 rounded-lg focus:outline-none focus:border-indigo-500 focus:ring-indigo-500"
+                  />
+                </div>
+              </div>
+            ))}
+            <div className=" mt-4">
+              <input
+                id="remember-me"
+                name="remember-me"
+                type="checkbox"
+                className="h-4 w-4"
+              />
+              <label htmlFor="remember-me" className="ml-2 inline text-color_1">
+                By signing up, you agree to the{" "}
+                <a href="" className=" text-color_5">
+                  terms of service
+                </a>
+              </label>
+              <button className=" block bg-color_5 text-white font-medium w-full mt-8 py-3 rounded-lg">
+                Sign Up
+              </button>
+            </div>
+            <div className=" grid grid-cols-12 mt-3 gap-x-4">
+              <div className="col-span-5">
+                <div className=" bg-color_1 border bg-opacity-50 rounded-lg mt-3"></div>
+              </div>
+              <div className="col-span-2 text-center">
+                <span className=" text-lg text-color_1">or</span>
+              </div>
+              <div className="col-span-5">
+                <div className=" bg-color_1 border bg-opacity-50 rounded-lg mt-3"></div>
+              </div>
+              <div className="col-span-6">
+                <a
+                  href=""
+                  target="_blank"
+                  className=" block text-center bg-color_25 transition-all hover:bg-opacity-95 text-white font-medium mt-4 py-3 rounded-lg"
+                >
+                  <BsGoogle className=" inline text-xl" /> Login with Google
+                </a>
+              </div>
+              <div className="col-span-6">
+                <a
+                  href=""
+                  target="_blank"
+                  className=" block text-center bg-color_26 transition-all hover:bg-opacity-95 text-white font-medium mt-4 py-3 rounded-lg"
+                >
+                  <FaFacebookF className=" inline text-xl" /> Login with
+                  Facebook
+                </a>
+              </div>
+              <div className="col-span-12 text-center mt-3 md:mb-0 mb-5">
+                <p className=" font-medium text-color_1">
+                  Don't have an account?{" "}
+                  <Link href="/sign-in">
+                    <a className=" text-color_5">Sign in here</a>
+                  </Link>
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
