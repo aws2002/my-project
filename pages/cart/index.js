@@ -3,6 +3,7 @@ import { FiEdit } from "react-icons/fi";
 import { XIcon } from "@heroicons/react/outline";
 import React from "react";
 import Link from "next/link";
+import Layout from "../../components/Layouts/Layout ";
 export default function Cart() {
     const[toggleClose,setToggleClose]=React.useState(true)
   return (
@@ -190,3 +191,4 @@ export default function Cart() {
     </section>
   );
 }
+Cart.Layout = Layout;

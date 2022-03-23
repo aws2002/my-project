@@ -83,6 +83,3 @@ export default function ForgotPassword() {
     </section></>
   );
 }
-ForgotPassword.getLayout = (page) => {
-  return <>{page}</>;
-};

@@ -33,7 +33,7 @@ export default function Footer() {
     },
   ];
   return (
-    <footer className="py-12 px-5">
+    <footer className="py-12 px-5 bg-color_22">
       <div className=" container">
         <div className=" grid grid-cols-6 gap-x-12">
           <div className="md:col-span-2 col-span-6 mb-7">

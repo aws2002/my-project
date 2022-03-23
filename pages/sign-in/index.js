@@ -4,7 +4,6 @@ import { FaFacebookF } from "react-icons/fa";
 import { BsGoogle } from "react-icons/bs";
 import Link from "next/link";
 import Head from "next/head";
-
 export default function SignIn() {
   
   return (
@@ -171,9 +170,5 @@ export default function SignIn() {
       </div>
     </section>
     </>
-    
   );
 }
-SignIn.getLayout = (page) => {
-  return <>{page}</>;
-};

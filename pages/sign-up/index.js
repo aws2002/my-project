@@ -174,6 +174,3 @@ export default function SignUp() {
     </>
   );
 }
-SignUp.getLayout = (page) => {
-  return <>{page}</>;
-};

@@ -59,9 +59,6 @@ footer li a:hover {
 .iconStar svg {
   display: inline;
 }
-// .slick-dots li{
-//   display: block !important;
-// }
 .active--Box-Trending--Courses{
   & .activeHover{
     display: none;
@@ -156,5 +153,9 @@ footer li a:hover {
 }
 .bg-img-4{
   background-image: url(/asset\ 41.png);
+  background-size: cover;
+}
+.bg-img-student-dashboard{
+  background-image: url(/asset\ 10.png);
   background-size: cover;
 }

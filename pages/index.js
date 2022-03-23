@@ -4,17 +4,22 @@ import FeedbackStudents from "../components/SectionsPages/FeedbackStudents";
 import HeroSections from "../components/SectionsPages/HeroSections";
 import PopularCourses from "../components/SectionsPages/PopularCourses";
 import TrendingCourses from "../components/SectionsPages/TrendingCourses";
-import ToggleDarkMode from "../components/Tools/ToggleDarkMode";
+import Layout from "../components/Layouts/Layout ";
+import Head from "next/head";
 export default function Home() {
-  
   return (
     <>
-    <HeroSections/>
-    <Counter/>
-    <PopularCourses/>
-    <BeInstructor/>
-    <TrendingCourses/>
-    <FeedbackStudents/>
+      <Head>
+        <title>Home page</title>
+        <meta name="keywords" content="osama" />
+      </Head>
+      <HeroSections />
+      <Counter />
+      <PopularCourses />
+      <BeInstructor />
+      <TrendingCourses />
+      <FeedbackStudents />
     </>
   );
 }
+Home.Layout = Layout;

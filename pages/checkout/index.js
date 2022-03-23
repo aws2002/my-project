@@ -2,6 +2,7 @@ import React from "react";
 import { XIcon } from "@heroicons/react/outline";
 import { Disclosure } from "@headlessui/react";
 import { ChevronUpIcon } from "@heroicons/react/solid";
+import Layout from "../../components/Layouts/Layout ";
 export default function Checkout() {
   const [toggleClose, setToggleClose] = React.useState(true);
   var inputs = [
@@ -394,3 +395,4 @@ export default function Checkout() {
     </section>
   );
 }
+Checkout.Layout = Layout;

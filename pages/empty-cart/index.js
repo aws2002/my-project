@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Layout from "../../components/Layouts/Layout ";
 export default function EmptyCart() {
   return (
     <section className="empty-cart px-5 py-5">
@@ -48,3 +49,4 @@ export default function EmptyCart() {
     </section>
   );
 }
+EmptyCart.Layout = Layout;

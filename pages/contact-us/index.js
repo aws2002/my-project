@@ -4,7 +4,7 @@ import { BsTelephoneFill } from "react-icons/bs";
 import { FaLocationArrow } from "react-icons/fa";
 import { HiOutlineMail } from "react-icons/hi";
 
-
+import Layout from "../../components/Layouts/Layout ";
 export default function index() {
   const dataContact = [
     {
@@ -130,3 +130,4 @@ export default function index() {
     </section>
   );
 }
+index.Layout = Layout;

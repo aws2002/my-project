@@ -6,6 +6,7 @@ import { HiOutlineTable } from "react-icons/hi";
 import { motion } from "framer-motion";
 import { BsSuitHeartFill } from "react-icons/bs";
 import { MdDeleteSweep } from "react-icons/md";
+import Layout from "../../components/Layouts/Layout ";
 export default function WishList() {
   return (
     <section className=" my-5">
@@ -201,3 +202,4 @@ export default function WishList() {
     </section>
   );
 }
+WishList.Layout = Layout;
