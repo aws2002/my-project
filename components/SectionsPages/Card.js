@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 export default function Card({ data, cardIndex }) {
   return (
-    <div className={`card`}>
+    <div className="card">
       {data[cardIndex].map((item, i) => (
         <motion.div
           key={i}

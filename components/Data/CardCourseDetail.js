@@ -9,7 +9,7 @@ export default [
   ],
   [
     {
-      component: "",
+      component:  <OverviewCourseDetail/>,
     },
   ],
   [
@@ -19,7 +19,7 @@ export default [
   ],
   [
     {
-      component: "",
+      component:  <OverviewCourseDetail/>,
     },
   ],
   [
