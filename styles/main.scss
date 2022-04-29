@@ -159,3 +159,17 @@ footer li a:hover {
   background-image: url(/asset\ 10.png);
   background-size: cover;
 }
+
+input:invalid[focused="true"]{
+  border: 3px solid red;
+}
+
+input:invalid[focused="true"] ~ span{
+  display: block;
+}
+form span{
+  font-size: 12px;
+  padding: 3px;
+  color: red;
+  display: none;
+}

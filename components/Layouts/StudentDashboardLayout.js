@@ -24,7 +24,16 @@ export default function StudentDashboardLayout({ children }) {
       <section className="pt-5 pb-28">
         <div className="relative">
           <div className="bg-img-student-dashboard py-24 bg-color_16"></div>
-          <div className=" bg-color_3 -mt-10 container">sad</div>
+          <div className=" bg-color_3 -mt-10 container">
+            <div className=" grid grid-cols-12">
+              <div className="col-span-3 h-32 w-32 bg-color_5 rounded-full">
+
+              </div>
+              <div className="col-span-9 ml-auto my-auto">
+                <button className=""> test</button>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
       <section className="dashboard my-5 px-4">

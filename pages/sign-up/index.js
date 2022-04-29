@@ -1,10 +1,83 @@
 import { HiOutlineMail } from "react-icons/hi";
 import { RiLockPasswordFill } from "react-icons/ri";
-import { FaFacebookF } from "react-icons/fa";
+import { FaFacebookF, FaRegUser } from "react-icons/fa";
 import { BsGoogle } from "react-icons/bs";
+import React from "react";
 import Link from "next/link";
 import Head from "next/head";
+import FormInput from "../../components/Tools/FormInput";
 export default function SignUp() {
+  const [values, setValues] = React.useState({
+    username: "",
+    email: "",
+    birthday: "",
+    password: "",
+    confirmPassword: "",
+  });
+  const inputs = [
+    {
+      id: 1,
+      titel: "User name *",
+      type: "text",
+      name: "username",
+      placeholder: "Name",
+      icon: (
+        <FaRegUser className=" absolute top-3 left-3 text-2xl text-color_1" />
+      ),
+      errorMessage:
+        "Username should be 3-16 characters and shouldn't include any special character!",
+      pattern: "^[A-Za-z0-9]{3,16}$",
+      required: true,
+    },
+    {
+      id: 2,
+      titel: "Email address *",
+      type: "email",
+      name: "email",
+      placeholder: "E-mail",
+      icon: (
+        <HiOutlineMail className=" absolute top-3 left-3 text-2xl text-color_1" />
+      ),
+      errorMessage: "Email must be a valid address, e.g. test@gmail.com",
+      pattern: "^([a-z\d\.-]+)@([a-z\d-]+)\.([a-z]{2,8})(\.[a-z]{2,8})?$",
+      required: true,
+    },
+    {
+      id: 3,
+      titel: "Password *",
+      type: "password",
+      name: "password",
+      placeholder: "**********",
+      errorMessage:
+        "Password should be 8-20 characters and include at least 1 letter, 1 number and 1 special character!",
+      icon: (
+        <RiLockPasswordFill className=" absolute top-3 left-3 text-2xl text-color_1" />
+      ),
+      pattern: `^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$`,
+      required: true,
+    },
+    {
+      id: 4,
+      titel: "Confirm Password *",
+      name: "confirmPassword",
+      type: "password",
+      placeholder: "**********",
+      icon: (
+        <RiLockPasswordFill className=" absolute top-3 left-3 text-2xl text-color_1" />
+      ),
+      errorMessage: "Passwords don't match!",
+      pattern: values.password,
+      required: true,
+    },
+  ];
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
+
+  const onChange = (e) => {
+    setValues({ ...values, [e.target.name]: e.target.value });
+  };
   return (
     <>
       <Head>
@@ -66,70 +139,37 @@ export default function SignUp() {
             <p className=" text-color_1 font-medium text-lg">
               Nice to see you! Please Sign up with your account.
             </p>
-            {[
-              {
-                id: 1,
-                titel: "Email address *",
-                type: "email",
-                placeholder: "E-mail",
-                icon: (
-                  <HiOutlineMail className=" absolute top-3 left-3 text-2xl text-color_1" />
-                ),
-              },
-              {
-                id: 2,
-                titel: "Password *",
-                type: "password",
-                placeholder: "**********",
-                icon: (
-                  <RiLockPasswordFill className=" absolute top-3 left-3 text-2xl text-color_1" />
-                ),
-              },
-              {
-                id: 3,
-                titel: "Confirm Password *",
-                type: "password",
-                placeholder: "**********",
-                icon: (
-                  <RiLockPasswordFill className=" absolute top-3 left-3 text-2xl text-color_1" />
-                ),
-              },
-            ].map((item) => (
-              <div key={item.id}>
+            <form action="" onSubmit={handleSubmit}>
+              {inputs.map((input) => (
+                <FormInput
+                  key={input.id}
+                  {...input}
+                  value={values[input.name]}
+                  onChange={onChange}
+                />
+              ))}
+              <div className=" mt-4">
+                <input
+                  id="remember-me"
+                  name="remember-me"
+                  type="checkbox"
+                  className="h-4 w-4"
+                />
                 <label
-                  htmlFor="email-address"
-                  className="block font-medium text-color_1 mt-5 mb-1 text-md"
+                  htmlFor="remember-me"
+                  className="ml-2 inline text-color_1"
                 >
-                  {item.titel}
+                  By signing up, you agree to the{" "}
+                  <a href="" className=" text-color_5">
+                    terms of service
+                  </a>
                 </label>
-
-                <div className="relative">
-                  {item.icon}
-                  <input
-                    type={item.type}
-                    placeholder={item.placeholder}
-                    className=" font-medium w-full bg-color_22 pl-11 py-3 focus:ring-2 rounded-lg focus:outline-none focus:border-indigo-500 focus:ring-indigo-500"
-                  />
-                </div>
+                <button className="block bg-color_5 text-white font-medium w-full mt-8 py-3 rounded-lg">
+                  Sign Up
+                </button>
               </div>
-            ))}
-            <div className=" mt-4">
-              <input
-                id="remember-me"
-                name="remember-me"
-                type="checkbox"
-                className="h-4 w-4"
-              />
-              <label htmlFor="remember-me" className="ml-2 inline text-color_1">
-                By signing up, you agree to the{" "}
-                <a href="" className=" text-color_5">
-                  terms of service
-                </a>
-              </label>
-              <button className=" block bg-color_5 text-white font-medium w-full mt-8 py-3 rounded-lg">
-                Sign Up
-              </button>
-            </div>
+            </form>
+
             <div className=" grid grid-cols-12 mt-3 gap-x-4">
               <div className="col-span-5">
                 <div className=" bg-color_1 border bg-opacity-50 rounded-lg mt-3"></div>

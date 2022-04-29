@@ -40,6 +40,7 @@ export default function Courses({ menuItem }) {
                   <Heart
                     isFilled={Favorite.isFavorite}
                     handleClick={toggleFavorite}
+                    index={item.id}
                   />
                 </div>
                 <div className="md:col-span-12 col-span-12 mt-3">

@@ -1,5 +1,6 @@
 import Link from "next/link";
-export default function Error() {
+import Layout from "../components/Layouts/Layout ";
+export default function Errorr() {
   return (
     <section className="error px-5 py-5">
       <div className=" grid container grid-cols-12">
@@ -20,3 +21,4 @@ export default function Error() {
     </section>
   );
 }
+Errorr.Layout = Layout;
