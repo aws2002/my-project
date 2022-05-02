@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import "./variables/variables";
 .switch[data-isOn="true"] {
   justify-content: flex-end;
 }
@@ -91,12 +92,21 @@ footer li a:hover {
   bottom: 170px;
   right: 820px;
 }
-.fill-danger {
-  fill: #d6293e !important;
+.fill-{
+  &danger {
+    fill: #d6293e !important;
+  }
+  &warning{
+    fill: #f7c32e !important;
+  }
+  &danger-2{
+    fill: #fbe9eb !important;
+  }
+  &warning-2{
+    fill: #f7c32e94;
+  }
 }
-.fill-warning{
-  fill: #f7c32e !important;
-}
+
 .contantImge{
   border-radius:63% 37% 59% 41% / 38% 50% 50% 62%;
   height: 580px;
@@ -113,9 +123,7 @@ footer li a:hover {
   transform:rotate(70deg);
   z-index: -1;
 }
-.fill-danger-2{
-  fill: #fbe9eb !important;
-}
+
 .vidoeo-play-btn {
   animation: pulse_1 2s ease infinite;
   &:hover {
@@ -148,9 +156,7 @@ footer li a:hover {
   right: 10px;
   bottom: -20px;
 }
-.fill-warning-2{
-  fill: #f7c32e94;
-}
+
 .bg-img-4{
   background-image: url(/asset\ 41.png);
   background-size: cover;
@@ -173,3 +179,11 @@ form span{
   color: red;
   display: none;
 }
+// .slick-current{
+//   background-color: #066ac9;
+// }
+.slick-dots{
+  position:relative !important;
+  bottom: 0 !important;
+}
+// class="slick-slide slick-active slick-current"
