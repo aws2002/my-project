@@ -2,7 +2,7 @@
 import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
-import ToggleDarkMode from '../Tools/ToggleDarkMode'
+
 
 const navigation = [
   { name: 'Dashboard', href: '#', current: true },
@@ -64,9 +64,10 @@ export default function Navbar() {
                   </div>
                 </div>
               </div>
+              
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                 
-
+                
                 {/* Profile dropdown */}
                 <Menu as="div" className="ml-3 relative">
                   <div>

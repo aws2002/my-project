@@ -17,7 +17,9 @@ i18next
     },
     backend: {
       loadPath: "/locale/{{lng}}/translation.json",
-    },
+    },react:{
+      useSuspense:false
+    }
   });
 
 export default i18next;

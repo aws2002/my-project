@@ -2,7 +2,10 @@ import React from "react";
 import { BsPlayFill } from "react-icons/bs";
 import { HiBadgeCheck } from "react-icons/hi";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 export default function HeroSections() {
+  const [t,il18n]=useTranslation()
+  
   return (
     <>
       <section className="hero--sections my-10 relative">
@@ -128,7 +131,7 @@ export default function HeroSections() {
             className="md:col-span-6 col-span-12 m-auto md:px-0 px-5"
           >
             <h1 className=" text-6xl font-bold text-black text-opacity-80 ">
-              Limitless learning at your
+              Limitless learning at your 
               <span span className="relative">
                 {" "}
                 fingertips
@@ -149,8 +152,7 @@ export default function HeroSections() {
               </span>
             </h1>
             <p className=" text-2xl text-color_1 font-semibold mt-10 mb-5">
-              Online learning and teaching marketplace with 5K+ courses & 10M
-              students. Taught by experts to help you acquire new skills.
+              {t("home.description")}
             </p>
             <ul className=" mb-7">
               {[
